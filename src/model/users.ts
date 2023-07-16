@@ -10,7 +10,7 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    aunthentication: {
+    authentication: {
         // select = false means this object will not be included in the while fetch aunthentication data
         password: {type: String, required: true, select: false}, 
         salt: {type: String, select: false},

@@ -5,10 +5,11 @@ import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { dbConnect } from './config/dbConnect'
-
 // initialize dotenv
 dotenv.config()
+
+import { dbConnect } from './config/dbConnect'
+import router from './router';
 
 const app = express();
 app.use(cors({
@@ -29,3 +30,5 @@ server.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
 })
 
+// router
+app.use('/', router())
