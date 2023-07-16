@@ -70,7 +70,7 @@ export const login = async (req: express.Request, res: express.Response) => {
         await user.save()
 
         // pass the session token into cookie
-        res.cookie('AUTH-SESSION', user.authentication.sessionToken, {
+        res.cookie(process.env.AUTH_COOKIE_KEY, user.authentication.sessionToken, {
             domain: 'localhost',
             path: '/'
         })
